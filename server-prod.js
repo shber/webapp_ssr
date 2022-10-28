@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 14:23:22
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-27 14:54:51
+ * @LastEditTime: 2022-10-28 18:19:56
  * @Description: 
  */
 import Koa from 'koa';
@@ -17,27 +17,30 @@ const resolve = (p) => path.resolve(_dirname, p);
 const clientRoot = resolve('dist/client');
 const template = fs.readFileSync(resolve('dist/client/index.html'), 'utf-8');
 import { render } from './dist/server/entry-server.js';
-const manifest = './dist/client/ssr-manifest.json';
+import manifest from './dist/client/ssr-manifest.json' assert { type: "json" };
+// import manifest from './dist/client/ssr-manifest.json';
 
+console.log("manifest~~~~~", manifest);
 (async () => {
     const app = new Koa();
 
     app.use(async (ctx) => {
-				// 请求的是静态资源
+		// 请求的是静态资源
         if (ctx.path.startsWith('/assets')) {
             await sendFile(ctx, ctx.path, { root: clientRoot });
             return;
         }
 
-        const [appHtml, preloadLinks] = await render(ctx, manifest);
-
+        const [renderedHtml, preloadLinks] = await render(ctx, manifest);
+        // console.log("manifest~~~~~", renderedHtml, manifest );
+        setTimeout(()=>{console.log('renderedHtml', renderedHtml);},1000)
         const html = template
             .replace('<!--preload-links-->', preloadLinks)
-            .replace('<!--app-html-->', appHtml);
+            .replace('<!--app-html-->', renderedHtml);
 
         ctx.type = 'text/html';
         ctx.body = html;
     });
 
-    app.listen(8080, () => console.log('started server on http://localhost:8080'));
+    app.listen(8082, () => console.log('started server on http://localhost:8082'));
 })();

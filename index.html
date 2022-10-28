@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 11:33:13
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-27 17:29:02
+ * @LastEditTime: 2022-10-28 17:11:02
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -10,10 +10,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta http-equiv="Expires" content="0">
+    <!-- <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <title>Vite + Vue</title>
@@ -44,6 +44,24 @@
           use_app_track: true,
           heatmap:{}
       });
+    </script>
+    <script>
+        // 封装一个根据屏幕尺寸自动改变html的font-size大小的函数
+        function rem() {
+          //  获取html的宽度
+          let htmlW = document.documentElement.clientWidth;
+          // 获取body的宽度
+          let bodyW = document.body.clientWidth;
+          // 兼容处理
+          let W = htmlW || bodyW;
+          // 设置html的font-size大小
+          // 因为设计图尺寸是750，所以平分，这样*100之后，1rem就等于100px;
+          document.documentElement.style.fontSize = (W / 10) + 'px';
+        }
+        // 定义屏幕宽度改变时触发
+        window.onresize = function () { rem() }
+        // 设置初始触发一次
+        rem()
     </script>
     <script src="https://static.mingchu.co/webapp/assets/js/sensorsdata.min.js"></script>
   </body>

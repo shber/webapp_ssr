@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 15:08:19
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-27 15:30:10
+ * @LastEditTime: 2022-10-28 11:43:23
  * @Description: 
  */
 import { articles } from '@/api/api'
@@ -104,6 +104,14 @@ import dsBridge from 'dsbridge'
     // 字符串拼接，里面都是双引号，类似JSON格式
     return new Promise((resolve, reject) => {
       dsBridge.call('jsPushNativeVc', $param, function(result) {
+        resolve(result)
+      })
+    })
+  }
+  export function pulishNewFoodClick(des, id, title,subjectID,subjectitle) { // 拉起主题页
+    // alert('des:'+des+'   id:'+id+'  title:'+title+'  subjectID:'+subjectID+'  subjectitle:'+subjectitle)
+    return new Promise((resolve, reject) => {
+      dsBridge.call('pulishFoodClick', `{"des":"${des}","skuid":"${id}","keyword":"${title}","subjectId":"${subjectID}","subjectContent":"${subjectitle}"}`, function(result) {
         resolve(result)
       })
     })

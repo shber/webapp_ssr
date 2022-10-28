@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 14:46:30
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-27 15:51:47
+ * @LastEditTime: 2022-10-28 17:41:44
  * @Description: 
  */
 import {
@@ -26,19 +26,25 @@ export const createRouter = (type) =>
         },
         component: () => import('@/views/home.vue')
       },
-      {
-        path: '/homessr',
-        name: 'homessr',
-        component: () => import('@/views/homessr/index.vue'),
-        redirect: '/homessr/home',
-        children: [
-          {
-            path: 'home', // 寻新计划主页
-            name: 'home',
-            component: () => import('@/views/homessr/home/index.vue'),
-            meta: { title: '寻新计划' }
-          },
-        ]
-      }
+      // {
+      //   path: '/homessr',
+      //   name: 'homessr',
+      //   component: () => import('@/views/homessr/index.vue'),
+      //   redirect: '/homessr/home',
+      //   children: [
+      //     {
+      //       path: 'home', // 寻新计划主页
+      //       name: 'home',
+      //       component: () => import('@/views/homessr/home/index.vue'),
+      //       meta: { title: '寻新计划' }
+      //     },
+      //     {
+      //       path: 'works', // 寻新计划主页
+      //       name: 'works',
+      //       component: () => import('@/views/homessr/worksList/index.vue'),
+      //       meta: { title: '寻新计划' }
+      //     },
+      //   ]
+      // }
     ]
   });

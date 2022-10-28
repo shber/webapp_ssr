@@ -2,11 +2,11 @@
  * @Author: Shber
  * @Date: 2022-10-27 11:33:13
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-27 17:34:33
+ * @LastEditTime: 2022-10-28 17:45:49
  * @Description: 
 -->
 <template>
-    <RouterView />
+    <router-view />
 </template>
 <script>
 import { onMounted } from 'vue'

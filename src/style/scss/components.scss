@@ -1,0 +1,119 @@
+// index zhankai
+@charset "utf-8";
+@function rem($px){
+	// @return $px*(1/50)*1rem;
+  @return $px * calc(1/50) * 1rem;
+}
+
+.gcloading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 999;
+	img{
+		width: 125px;
+		position: absolute;
+		top: 30vh;
+		left: 50%;
+    transform: translateX(-50%);
+	}
+}
+
+.banner_height{
+  width: 100%;
+  height: 56px;
+  .preview_bar{
+    display: flex;
+    align-items: center;
+  }
+  .ondown_banner, .down_banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ondown_banner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  .down_banner, .ondown_banner {
+    width: 100%;
+    // position: relative;
+    min-height: 56px;
+    background-color: #F7F5F3;
+    .left_close{display: flex; align-items: center;}
+    .down_close {
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin-left: 17px;
+        margin-right: 12px;
+        background: url(https://static.mingchu.co/webapp/images/components/newClose.png) center center no-repeat;
+        background-size: 15px 15px;
+    }
+    .down_himg { float: left;  width: 130px; height: 30px; }
+    .download {
+        float: right;
+        width: 70px;
+        height: 30px;
+        margin-right: 14px;
+        border-radius: 2px;
+        background-color: #C99700;
+        // border: solid 1px #ad8748;
+        font-size: 13px;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+    }
+  }
+}
+
+
+.gc_mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.modal-top { // 微信引导提示框
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.4);
+  .gl_share {
+    margin: 12px auto 0;
+    width: 353px;
+    height: 110px;
+    background-size: 353px 110px;
+  }
+}
+// .inf_con_zt,fig_con_zt {
+//   position: relative;
+//   img {
+//       width: 100%;
+//       vertical-align: top;
+//   }
+
+//   .inf_img {
+//       padding: rem(4*2) 0;
+//       margin: 0;
+//   }
+// }
+// .g_edit_txt{
+//   // margin: 0 30px;
+//  padding-bottom: rem(26*2);
+//  img{  width: 100%; vertical-align: top;}
+ 
+// }

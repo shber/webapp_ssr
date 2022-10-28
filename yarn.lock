@@ -62,6 +62,16 @@
     "@intlify/core-base" "9.2.2"
     "@intlify/shared" "9.2.2"
 
+"@koa/router@^12.0.0":
+  version "12.0.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/@koa/router/-/router-12.0.0.tgz#2ae7937093fd392761c0e5833c368379d4a35737"
+  integrity sha512-cnnxeKHXlt7XARJptflGURdJaO+ITpNkOHmQu7NHmCoRinPbyvFzce/EG/E8Zy81yQ1W9MoSdtklc3nyaDReUw==
+  dependencies:
+    http-errors "^2.0.0"
+    koa-compose "^4.1.0"
+    methods "^1.1.2"
+    path-to-regexp "^6.2.1"
+
 "@types/accepts@*":
   version "1.3.5"
   resolved "https://repo.huaweicloud.com/repository/npm/@types/accepts/-/accepts-1.3.5.tgz#c34bec115cfc746e04fe5a059df4ce7e7b391575"
@@ -472,7 +482,7 @@ delegates@^1.0.0:
   resolved "https://repo.huaweicloud.com/repository/npm/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==
 
-depd@^2.0.0, depd@~2.0.0:
+depd@2.0.0, depd@^2.0.0, depd@~2.0.0:
   version "2.0.0"
   resolved "https://repo.huaweicloud.com/repository/npm/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
   integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
@@ -743,6 +753,17 @@ http-errors@^1.6.3, http-errors@^1.7.3, http-errors@~1.8.0:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.1"
 
+http-errors@^2.0.0:
+  version "2.0.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/http-errors/-/http-errors-2.0.0.tgz#b7774a1486ef73cf7667ac9ae0858c012c57b9d3"
+  integrity sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==
+  dependencies:
+    depd "2.0.0"
+    inherits "2.0.4"
+    setprototypeof "1.2.0"
+    statuses "2.0.1"
+    toidentifier "1.0.1"
+
 http-errors@~1.6.2:
   version "1.6.3"
   resolved "https://repo.huaweicloud.com/repository/npm/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
@@ -886,6 +907,11 @@ media-typer@0.3.0:
   resolved "https://repo.huaweicloud.com/repository/npm/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
 
+methods@^1.1.2:
+  version "1.1.2"
+  resolved "https://repo.huaweicloud.com/repository/npm/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
+  integrity sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==
+
 mime-db@1.52.0:
   version "1.52.0"
   resolved "https://repo.huaweicloud.com/repository/npm/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
@@ -959,6 +985,11 @@ path-parse@^1.0.7:
   version "1.0.7"
   resolved "https://repo.huaweicloud.com/repository/npm/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
+
+path-to-regexp@^6.2.1:
+  version "6.2.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/path-to-regexp/-/path-to-regexp-6.2.1.tgz#d54934d6798eb9e5ef14e7af7962c945906918e5"
+  integrity sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==
 
 picocolors@^1.0.0:
   version "1.0.0"
@@ -1073,6 +1104,11 @@ sourcemap-codec@^1.4.8:
   version "1.4.8"
   resolved "https://repo.huaweicloud.com/repository/npm/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
   integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
+
+statuses@2.0.1:
+  version "2.0.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"
+  integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
 
 "statuses@>= 1.4.0 < 2", "statuses@>= 1.5.0 < 2", statuses@^1.5.0:
   version "1.5.0"
