@@ -2,18 +2,24 @@
  * @Author: Shber
  * @Date: 2022-10-27 11:52:09
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-27 15:03:05
+ * @LastEditTime: 2022-10-31 15:08:49
  * @Description: 
  */
 import { createApp } from './main';
 import { renderToString } from '@vue/server-renderer';
-
+import { createRouter } from './router';
 export const render = async (
   ctx,
   manifest
 ) => {
   const { app } = createApp();
   // console.log(ctx, manifest, '');
+
+    // 路由注册
+    const router = createRouter('server');
+    app.use(router);
+    await router.push(ctx.path);
+    await router.isReady();
 
   const renderCtx = {};
 

@@ -4,8 +4,8 @@
 import useClipboard from 'vue-clipboard3'
 // 复制文字方法
 export function coypText(text) {
-  const { toClipboard } = useClipboard()
-  return toClipboard(text)
+  // const { toClipboard } = useClipboard()
+  // return toClipboard(text)
 }
 
 /* 是否是名厨浏览器*/

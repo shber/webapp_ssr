@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 14:23:22
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-28 18:19:56
+ * @LastEditTime: 2022-10-31 15:22:17
  * @Description: 
  */
 import Koa from 'koa';
@@ -20,7 +20,6 @@ import { render } from './dist/server/entry-server.js';
 import manifest from './dist/client/ssr-manifest.json' assert { type: "json" };
 // import manifest from './dist/client/ssr-manifest.json';
 
-console.log("manifest~~~~~", manifest);
 (async () => {
     const app = new Koa();
 
@@ -33,7 +32,6 @@ console.log("manifest~~~~~", manifest);
 
         const [renderedHtml, preloadLinks] = await render(ctx, manifest);
         // console.log("manifest~~~~~", renderedHtml, manifest );
-        setTimeout(()=>{console.log('renderedHtml', renderedHtml);},1000)
         const html = template
             .replace('<!--preload-links-->', preloadLinks)
             .replace('<!--app-html-->', renderedHtml);
