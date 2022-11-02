@@ -5,6 +5,7 @@
     <div class="agreement_content_cn">
       <div id="img-content" class="inf_v_zhuc" style="border-bottom:none">
         <h1 style="color:#000">隐私权政策</h1>
+        <router-link :to="{ path: '/test'}">路径测试跳转</router-link>
         <div class="tips">
           更新时间：2022年4月27日 &nbsp; &nbsp;
           生效时间：2022年4月27日

@@ -2,12 +2,13 @@
  * @Author: Shber
  * @Date: 2022-10-27 11:33:13
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-28 17:47:48
+ * @LastEditTime: 2022-11-02 15:50:08
  * @Description: 
  */
 import { createSSRApp } from "vue";
 import App from "./App.vue";
-import Vconsole from 'vconsole'; // 移动端调试console
+// import components from './components/index'
+// import Vconsole from 'vconsole'; // 移动端调试console
 // import 'lib-flexible'; // 移动端rem适配
 import './style/style.scss';
 

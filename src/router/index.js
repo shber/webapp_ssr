@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 14:46:30
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-31 15:39:29
+ * @LastEditTime: 2022-11-02 16:05:33
  * @Description: 
  */
 import {
@@ -25,6 +25,18 @@ export const createRouter = (type) =>
             requireAuth: true
         },
         component: () => import('@/views/home.vue')
+      },
+      { // 自定义表单
+        path: '/test',
+        name:'test',
+        component: () => import('@/views/testpage/index.vue'),
+        meta: { title: '路径跳转' }
+      },
+      { // 自定义表单
+        path: '/form/:id',
+        name:'form',
+        component: () => import('@/views/form/index.vue'),
+        meta: { title: '名厨MINGCHU' }
       },
       {
         path: '/homessr',

@@ -1,7 +1,7 @@
 // import { goAppPage } from '@/utils/utils'
 // import bus from '@/utils/bus'
 // import { Toast } from 'vant'
-import useClipboard from 'vue-clipboard3'
+// import useClipboard from 'vue-clipboard3'
 // 复制文字方法
 export function coypText(text) {
   // const { toClipboard } = useClipboard()

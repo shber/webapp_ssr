@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 14:23:22
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-31 15:22:17
+ * @LastEditTime: 2022-11-02 11:49:30
  * @Description: 
  */
 import Koa from 'koa';
@@ -18,7 +18,7 @@ const clientRoot = resolve('dist/client');
 const template = fs.readFileSync(resolve('dist/client/index.html'), 'utf-8');
 import { render } from './dist/server/entry-server.js';
 import manifest from './dist/client/ssr-manifest.json' assert { type: "json" };
-// import manifest from './dist/client/ssr-manifest.json';
+
 
 (async () => {
     const app = new Koa();
@@ -40,5 +40,5 @@ import manifest from './dist/client/ssr-manifest.json' assert { type: "json" };
         ctx.body = html;
     });
 
-    app.listen(8082, () => console.log('started server on http://localhost:8082'));
+    app.listen(8080, () => console.log('started server on http://localhost:8080'));
 })();

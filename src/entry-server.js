@@ -2,12 +2,13 @@
  * @Author: Shber
  * @Date: 2022-10-27 11:52:09
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-31 15:08:49
+ * @LastEditTime: 2022-10-31 16:08:56
  * @Description: 
  */
 import { createApp } from './main';
 import { renderToString } from '@vue/server-renderer';
 import { createRouter } from './router';
+
 export const render = async (
   ctx,
   manifest

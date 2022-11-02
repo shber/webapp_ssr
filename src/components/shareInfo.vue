@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-02-16 12:25:24
  * @LastEditors: Shber
- * @LastEditTime: 2022-10-27 15:15:22
+ * @LastEditTime: 2022-11-01 16:14:37
  * @Description:
 -->
 <template>
@@ -36,10 +36,14 @@ export default defineComponent({
       immediate: true
     })
     onMounted(() => {
+      console.log('process.client', window);
+      if(!!window){
       nextTick(() => {
         wechatShare(state.shareData)
         miniShare(state.shareData)
       })
+      }
+
     })
     return { ...toRefs(state) }
   }
