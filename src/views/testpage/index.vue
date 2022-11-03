@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-11-02 16:04:38
  * @LastEditors: Shber
- * @LastEditTime: 2022-11-02 17:25:59
+ * @LastEditTime: 2022-11-03 12:09:34
  * @Description: 
 -->
 <template>
@@ -15,6 +15,7 @@
         <router-link class="mt10" :to="{ path: '/'}">路径测试跳转</router-link>
         <h2 class="mt10" @click="goApp(90276)">跳转到APP</h2>
         <h2 class="mt10" @click="share">分享到微信</h2>
+        <div class="response" ref="response"></div>
         
     </div>
   </div>
@@ -25,6 +26,7 @@ import config from '@/config/config'
 import { reactive, onBeforeMount, onMounted, toRefs } from 'vue'
 import ShareInfo from '@/components/shareInfo.vue'
 import { goAppPageOther, shareWecaht } from '@/utils/utils'
+import { get, post } from '@/api/ajax'
 export default {
   components: {
     ShareInfo
@@ -32,6 +34,7 @@ export default {
   setup(){
     const state = reactive({
       language:'',
+      response: null,
       shareInfo: { share_title: '闯关任务开启｜寻找川菜守“味”者', share_desc: '与星厨同行，共赴天府寻味之旅！', share_img: 'https://static.mingchu.co/webapp/findNew/share1.jpg', share_link: `${config.webapplink}/riseActivity/findNew/findshare` },
 
     })
@@ -45,8 +48,22 @@ export default {
     onMounted(()=>{
       // utils.hideShare('1')
       // state.language = utils.browserLanguage()
-      console.log("~~~~~~onMounted~~~~~~", window, navigator, wx, dsBridge);
+      console.log("~~~~~~onMounted~~~~~~", state.response);
+      getData()
     })
+
+    const getData = async ()=>{
+      let data = {
+        id: 177,
+        sort: '1',
+        listrow: 20,
+        page: 1
+      }
+      const res = await get('/api/theme/detail', data)
+       state.response.innerText = JSON.stringify(res)
+      // document.write(res)
+    }
+
     const goApp = (id)=>{
       goAppPageOther({ 'des': 'foodview', 'skuid': id, 'link': '' }, () => {})
     }
