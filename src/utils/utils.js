@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-10-27 15:08:19
  * @LastEditors: Shber
- * @LastEditTime: 2022-11-02 16:00:20
+ * @LastEditTime: 2022-11-10 15:54:44
  * @Description: 
  */
 import '@/components/callapp'
@@ -155,6 +155,9 @@ import { articles } from '@/api/api'
         resolve(result)
       })
     })
+  }
+  export function showShare() {
+    dsBridge.call('CallLocalShare')
   }
 
   export function goDown($des, $url = '', $routeId = '0') { // 新 h5跳转app

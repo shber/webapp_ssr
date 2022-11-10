@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2022-09-26 14:40:24
  * @LastEditors: Shber
- * @LastEditTime: 2022-11-03 11:57:28
+ * @LastEditTime: 2022-11-10 16:00:35
  * @Description:
  */
 import axios from 'axios'
@@ -52,7 +52,7 @@ service.interceptors.request.use(
     config.headers['lang'] = $lang
     config.headers['VERSION'] = version
     config.headers['Authorization'] = authorization
-    alert(authorization)
+    // alert(authorization)
     // config.headers['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLnNpbXVsYXRpb24ubWluZ2NodS5jby9hY2NvdW50L2xvZ2luIiwiaWF0IjoxNjQxMjc3Mzc5LCJleHAiOjE3OTY3OTczNzksIm5iZiI6MTY0MTI3NzM3OSwianRpIjoiYkVWZ0pBeEI5b3ZBdDVLVSIsInN1YiI6OTA5ODcsInBydiI6ImMzNWRjMjIwMGFiMzUxYzUzYzk1YmQyNTA1ZmE5YTUzMGI3MmFmZWUifQ.vZjWFyQ-JH9VYnfc4YcFWMAszlV6K9q3DKpXVCk1xrU' // 刘理强
     // config.headers['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLnRlc3QubWluZ2NodS5jby9hY2NvdW50L2xvZ2luIiwiaWF0IjoxNjY2MjYwNjQ5LCJleHAiOjE4MjE3ODA2NDksIm5iZiI6MTY2NjI2MDY0OSwianRpIjoidWxyQ2xOYUJxdWlSbXdweiIsInN1YiI6MTA3NDg3LCJwcnYiOiJjMzVkYzIyMDBhYjM1MWM1M2M5NWJkMjUwNWZhOWE1MzBiNzJhZmVlIn0.KEiFWK8HMQBT9CwfaGqj55eSDjfvibo23zl4zhIDvAg'
     // config.headers['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLnRlc3QubWluZ2NodS5jby9hY2NvdW50L2xvZ2luIiwiaWF0IjoxNjYwNTQzNTc2LCJleHAiOjE4MTYwNjM1NzYsIm5iZiI6MTY2MDU0MzU3NiwianRpIjoiSkw5aGtGWXJ6WHV6MWVGUSIsInN1YiI6Nzc3MjAsInBydiI6ImMzNWRjMjIwMGFiMzUxYzUzYzk1YmQyNTA1ZmE5YTUzMGI3MmFmZWUifQ.Y7qCMRdo-wP8LR5xZO1ScXFoai_8Uv0JjF-LEaYeBDM' 
